@@ -1,13 +1,55 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-	<meta http-equiv="content-type" content="text/html" />
-	<meta name="author" content="Brenton Reid" />
+    <head>
+    	<meta http-equiv="content-type" content="text/html" />
+    	<meta name="author" content="Brenton Reid" />
+        
+        <link type="text/css" rel="stylesheet" href="css/color_picker.css" />
+        <script src="http://js.jotform.com/JotFormCustomWidget.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        
+    	<title>Color Picker Widget</title>
+    </head>
 
-	<title>JotForm Widget</title>
-</head>
+    <body>
+        <div id="main">
+            
+            <span id="labelText"></span>
 
-<body>
-test
+            <div class="colorpick-btn-grp cssonly">
+                <div><input type="radio" name="group1" alt="#588A8A"/><label onclick="" class="colorpick-btn color1"></label></div>
+                <div><input type="radio" name="group1" alt="#70A8A7"/><label onclick="" class="colorpick-btn color2"></label></div>
+                <div><input type="radio" name="group1" alt="#FFE064"/><label onclick="" class="colorpick-btn color3"></label></div>
+                <div><input type="radio" name="group1" alt="#E8B34B"/><label onclick="" class="colorpick-btn color4"></label></div>
+                <div><input type="radio" name="group1" alt="#FFAE60"/><label onclick="" class="colorpick-btn color5"></label></div>
+                <div><input type="radio" name="group1" alt="#E8784B"/><label onclick="" class="colorpick-btn color6"></label></div>
+                <div><input type="radio" name="group1" alt="#FF6153"/><label onclick="" class="colorpick-btn color7"></label></div>
+                <div><input type="radio" name="group1" alt="#A3876D"/><label onclick="" class="colorpick-btn color8"></label></div>
+                <div><input type="radio" name="group1" alt="#646037"/><label onclick="" class="colorpick-btn color9"></label></div>
+                <div><input type="radio" name="group1" alt="#786648"/><label onclick="" class="colorpick-btn color10"></label></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                var label = JFCustomWidget.getQueryString('QuestionLabel');
+                document.getElementById('labelText').innerHTML = label;
+                
+                JFCustomWidget.subscribe("ready", function(){
+                   
+                    JFCustomWidget.subscribe("submit", function(){
+                        var msg = {
+                            valid: true,
+                            value: $("input[name=group1]:checked").attr('alt')
+                        }
+                        
+                        JFCustomWidget.sendSubmit(msg);
+                    });
+                });    
+            });
+            
+      </script>
+    </body>
+</html>
+
 </body>
 </html>

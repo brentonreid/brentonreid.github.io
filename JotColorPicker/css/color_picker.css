@@ -1,0 +1,47 @@
+.colorpick-btn-grp.cssonly * {
+    width:20px;
+    height:20px;
+}
+.colorpick-btn-grp.cssonly div {
+    display:inline-block;
+    position:relative;
+    margin:5px;
+}
+
+.colorpick-btn-grp.cssonly div label {
+    position:absolute;
+    z-index:0;
+    padding:0;
+    text-align:center;
+}
+
+.colorpick-btn-grp.cssonly div input {
+    position:absolute;
+    z-index:1;
+    cursor:pointer;
+    opacity:0;
+}
+
+.colorpick-btn-grp.cssonly div:hover label {
+}
+
+.colorpick-btn-grp.cssonly div input:checked + label {
+	box-shadow: 0 0 12px #25cffa;
+}
+.colorpick-btn{
+	border: solid 2px #fff;
+	position: relative;
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
+	border-radius: 5px;
+}
+.color1{background: #588A8A;}
+.color2{background: #70A8A7;}
+.color3{background: #FFE064;}
+.color4{background: #E8B34B;}
+.color5{background: #FFAE60;}
+.color6{background: #E8784B;}
+.color7{background: #FF6153;}
+.color8{background: #A3876D;}
+.color9{background: #646037;}
+.color10{background: #786648;}
